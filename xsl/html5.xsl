@@ -124,7 +124,7 @@
       </xsl:attribute>
     </meta>
   
-    <meta name="og:title">
+    <meta property="og:title">
       <xsl:attribute name="content">
          <xsl:value-of select="substring(normalize-space($og_title), 0, 60)"/>
       </xsl:attribute>
