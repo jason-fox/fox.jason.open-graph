@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--ant-->
+<!--
+  This file is part of the DITA-OT open-graph Plug-in project.
+  See the accompanying LICENSE file for applicable licenses.
+-->
+<project name="fox.jason.open-graph">
+  <target name="open-graph.init">
+    <property name="open-graph.image.root" value="${dita.plugin.fox.jason.open-graph.dir}/includes"/>
+    <property name="open-graph.image" value="open-graph.svg"/>
+    <condition 
+      property="open-graph.image.real"
+      value="${open-graph.image.root}${file.separator}${open-graph.image}"
+    >
+      <isset property="open-graph.url"/>
+    </condition>
+    <available file="${open-graph.image.real}" property="open-graph.image.copy" type="file"/>
+  </target>
+
+  <target
+    name="open-graph.copy"
+    if="open-graph.image.copy"
+    description="Copy open-graph file"
+  >
+    <copy todir="${dita.output.dir}">
+      <fileset dir="${open-graph.image.root}" includes="${open-graph.image}" />
+    </copy>
+  </target>
+</project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?>
+<!--
+  This file is part of the DITA-OT open-graph Plug-in project.
+  See the accompanying LICENSE file for applicable licenses.
+-->
+<plugin id="fox.jason.open-graph" version="1.0.0">
+
+  <feature extension="ant.import" file="process_open-graph.xml"/>
+  <!-- HTML5 extension points -->   
+  <feature extension="dita.xsl.html5" value="xsl/html5.xsl" type="file"/>
+  <!-- Uses the default depend.preprocess.copy-html.pre extension point -->
+  <feature extension="depend.preprocess.copy-html.pre" value="open-graph.copy"/>
+  <!-- Uses the default depend.preprocess.pre extension point -->
+  <feature extension="depend.preprocess.pre" value="open-graph.init"/>
+
+  <feature extension="dita.conductor.html5.param" file="params.xml"/>
+  
+  <transtype extends="base-html" abstract="true" desc="HTML-based output">
+    <param name="open-graph.image.root"  desc="File Location of the Open Graph Image file " type="string"/>
+    <param name="open-graph.image" desc="Relative path to an image for Open Graph and Twitter" type="string"/>
+    <param name="open-graph.image.alt" desc="Optional image description for Open Graph and Twitter" type="string"/>
+    <param name="open-graph.site.name" desc="Optional Site Name for Open Graph" type="string"/>
+    <param name="open-graph.title" desc="Fallback page title for Open Graph and Twitter" type="string"/>
+    <param name="open-graph.description" desc="Fallback page description for Open Graph and Twitter" type="string"/>
+    <param name="open-graph.url" desc="Website URL for Open Graph and Twitter" type="string"/>
+    <param name="twitter.site" desc="The Twitter @username the page should be attributed to." type="string"/>
+  </transtype>
+</plugin>

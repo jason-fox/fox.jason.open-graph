@@ -1,0 +1,39 @@
+ <params xmlns:if="ant:if" xmlns:unless="ant:unless">
+
+  <param name="SOURCE" 
+    expression="${args.input}" 
+  />
+
+  <param name="OPEN_GRAPH_URL" 
+    expression="${open-graph.url}" 
+    if:set="open-graph.url"
+  />
+
+  <param name="OPEN_GRAPH_IMAGE_SRC" 
+    expression="${open-graph.image}" 
+    if:set="open-graph.image"
+  />
+  <param name="OPEN_GRAPH_IMAGE_ALT" 
+    expression="${open-graph.image.alt}" 
+    if:set="open-graph.image.alt"
+  />
+  <param
+    name="OPEN_GRAPH_SITE_NAME"
+    expression="${open-graph.site.name}"
+    if:set="open-graph.site.name"
+  />
+  <param
+    name="OPEN_GRAPH_TITLE"
+    expression="${open-graph.title}"
+    if:set="open-graph.title"
+  />
+  <param name="OPEN_GRAPH_DESCRIPTION" 
+    expression="${open-graph.description}" 
+    if:set="open-graph.description"
+  />
+  <param name="TWITTER_SITE" 
+    expression="${twitter.site}" 
+    if:set="twitter.site"
+  />
+  
+</params>
