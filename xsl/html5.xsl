@@ -113,8 +113,8 @@
     </xsl:variable>
 
     <!-- Facebook Meta Tags -->
-    <meta name="og:type" content="website"/>
-    <meta name="og:url">
+    <meta property="og:type" content="website"/>
+    <meta property="og:url">
       <xsl:attribute name="content">
          <xsl:value-of select="concat($OPEN_GRAPH_URL, '/')"/>
          <xsl:call-template name="replace-extension">
@@ -129,20 +129,20 @@
          <xsl:value-of select="substring(normalize-space($og_title), 0, 60)"/>
       </xsl:attribute>
     </meta>
-    <meta name="og:description">
+    <meta property="og:description">
       <xsl:attribute name="content">
          <xsl:value-of select="substring(normalize-space($og_description), 0, 160)"/>
       </xsl:attribute>
     </meta>
     <xsl:if test="$og_image">
-      <meta name="og:image">
+      <meta property="og:image">
         <xsl:attribute name="content">
             <xsl:value-of select="concat($OPEN_GRAPH_URL, '/')"/>
             <xsl:value-of select="$og_image"/>
         </xsl:attribute>
       </meta>
       <xsl:if test="not($og_image_alt = '')">
-        <meta name="og:image:alt">
+        <meta property="og:image:alt">
           <xsl:attribute name="content">
               <xsl:value-of select="$og_image_alt"/>
           </xsl:attribute>
@@ -151,7 +151,7 @@
     </xsl:if>
 
     <xsl:if test="OPEN_GRAPH_SITE_NAME">
-      <meta name="og:site_name">
+      <meta property="og:site_name">
         <xsl:attribute name="content">
           <xsl:value-of select="$OPEN_GRAPH_SITE_NAME"/>
         </xsl:attribute>
@@ -169,7 +169,7 @@
          <xsl:value-of select="substring(normalize-space($og_description), 0, 160)"/>
       </xsl:attribute>
     </meta>
-    <meta name="twitter:url">
+    <meta property="twitter:url">
       <xsl:attribute name="content">
          <xsl:value-of select="concat($OPEN_GRAPH_URL, '/')"/>
          <xsl:call-template name="replace-extension">
