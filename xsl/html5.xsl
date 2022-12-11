@@ -137,7 +137,9 @@
     <xsl:if test="$og_image">
       <meta property="og:image">
         <xsl:attribute name="content">
-            <xsl:value-of select="concat($OPEN_GRAPH_URL, '/')"/>
+            <xsl:if test="not(starts-with($og_image, 'http://') or starts-with($og_image, 'https://'))">
+              <xsl:value-of select="concat($OPEN_GRAPH_URL, '/')"/>
+            </xsl:if>
             <xsl:value-of select="$og_image"/>
         </xsl:attribute>
       </meta>
