@@ -1,0 +1,3 @@
+test/** linguist-vendored
+
+process_open-graph.xml linguist-language=Ant-Build-System
