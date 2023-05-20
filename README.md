@@ -31,7 +31,7 @@ that you upgrade to the latest version.
 
 <a href="https://www.dita-ot.org"><img src="https://www.dita-ot.org/images/dita-ot-logo.svg" align="right" height="55"></a>
 
-The DITA-OT open-graph Plug-in  is a file reader for the DITA Open Toolkit.
+The DITA-OT open-graph Plug-in is a plugin for the DITA Open Toolkit.
 
 -   Full installation instructions for downloading DITA-OT can be found
     [here](https://www.dita-ot.org/4.0/topics/installing-client.html).
@@ -106,4 +106,4 @@ PATH_TO_DITA_OT/bin/dita -f [html5]  -o out -i PATH_TO_DITAMAP \
 
 ## License
 
-[Apache 2.0](LICENSE) © 2022 Jason Fox
+[Apache 2.0](LICENSE) © 2022-23 Jason Fox
