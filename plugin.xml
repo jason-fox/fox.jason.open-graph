@@ -9,8 +9,8 @@
   <feature extension="ant.import" file="process_open-graph.xml"/>
   <!-- HTML5 extension points -->   
   <feature extension="dita.xsl.html5" value="xsl/html5.xsl" type="file"/>
-  <!-- Uses the default depend.preprocess.copy-html.pre extension point -->
-  <feature extension="depend.preprocess.copy-html.pre" value="open-graph.copy"/>
+  <!-- Uses the default depend.preprocess.post extension point -->
+  <feature extension="depend.preprocess.post" value="open-graph.copy"/>
   <!-- Uses the default depend.preprocess.pre extension point -->
   <feature extension="depend.preprocess.pre" value="open-graph.init"/>
 
