@@ -20,7 +20,7 @@
   <target
     name="open-graph.copy"
     if="open-graph.image.copy"
-    description="Copy open-graph file"
+    description="Copy open-graph image file"
   >
     <copy todir="${dita.output.dir}">
       <fileset dir="${open-graph.image.root}" includes="${open-graph.image}" />
