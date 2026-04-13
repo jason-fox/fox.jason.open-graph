@@ -24,6 +24,7 @@
     <param name="open-graph.title" desc="Fallback page title for Open Graph and Twitter" type="string"/>
     <param name="open-graph.description" desc="Fallback page description for Open Graph and Twitter" type="string"/>
     <param name="open-graph.url" desc="Website URL for Open Graph and Twitter" type="string"/>
+    <param name="canonical.url" desc="Canonical URL for the website" type="string"/>
     <param name="twitter.site" desc="The Twitter @username the page should be attributed to." type="string"/>
   </transtype>
 </plugin>

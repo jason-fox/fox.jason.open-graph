@@ -72,7 +72,8 @@ The new `args.open-graph.*` parameters follow the existing syntax used by DITA-O
 
 ```console
 PATH_TO_DITA_OT/bin/dita -f [html5]  -o out -i PATH_TO_DITAMAP \
-  --open-graph.url=WEBSITE_URL
+  --open-graph.url=WEBSITE_URL \
+  --canonical.url=CANONICAL_URL
 ```
 
 To refer to an exisiting file hosted on a server, use a URL as the `args.open-graphpath` parameter
@@ -102,6 +103,7 @@ PATH_TO_DITA_OT/bin/dita -f [html5]  -o out -i PATH_TO_DITAMAP \
 -  `open-graph.title` - Fallback page title for Open Graph and Twitter.
 -  `open-graph.description` - Fallback page description for Open Graph and Twitter.
 -  `open-graph.url` - Website URL for Open Graph and Twitter.
+-  `canonical.url` - Website URL for the Canonical Link. (Defaults to `open-graph.url` if not set).
 -  `twitter.site` - The Twitter `@username` the page should be attributed to.
 
 ## License

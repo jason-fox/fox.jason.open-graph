@@ -9,6 +9,11 @@
     if:set="open-graph.url"
   />
 
+  <param name="CANONICAL_URL" 
+    expression="${canonical.url}" 
+    if:set="canonical.url"
+  />
+
   <param name="OPEN_GRAPH_IMAGE_SRC" 
     expression="${open-graph.image}" 
     if:set="open-graph.image"

@@ -13,6 +13,7 @@
 >
 
   <xsl:param name="OPEN_GRAPH_URL" as="xs:string?"/>
+  <xsl:param name="CANONICAL_URL" as="xs:string?"/>
   <xsl:param name="OPEN_GRAPH_TITLE" as="xs:string?"/>
   <xsl:param name="OPEN_GRAPH_DESCRIPTION" as="xs:string?"/>
   <xsl:param name="OPEN_GRAPH_IMAGE_SRC"  as="xs:string?"/>
@@ -44,6 +45,32 @@
     <xsl:if test="$OPEN_GRAPH_URL">
       <xsl:call-template name="setOpenGraphMeta"/>
     </xsl:if>
+    <xsl:if test="$CANONICAL_URL or $OPEN_GRAPH_URL">
+      <xsl:call-template name="setCanonicalLink"/>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="setCanonicalLink">
+    <xsl:variable name="base_url">
+      <xsl:choose>
+        <xsl:when test="$CANONICAL_URL">
+          <xsl:value-of select="$CANONICAL_URL"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$OPEN_GRAPH_URL"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <link rel="canonical">
+      <xsl:attribute name="href">
+         <xsl:value-of select="concat($base_url, '/')"/>
+         <xsl:call-template name="replace-extension">
+            <xsl:with-param name="filename" select="$current-file"/>
+            <xsl:with-param name="extension" select="$OUTEXT"/>
+          </xsl:call-template>
+      </xsl:attribute>
+    </link>
   </xsl:template>
 
   <xsl:template name="setOpenGraphMeta">
